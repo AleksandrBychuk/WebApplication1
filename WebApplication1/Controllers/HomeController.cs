@@ -48,7 +48,8 @@ namespace WebApplication1.Controllers
             return View();
         }
 
-        [HttpGet("all-filter-words")]
+        [HttpGet]
+        [Route("api/words-list")]
         public async Task<IEnumerable<string>> GetAllFilterWords()
         {
             var result = await _applicationDbContext.FilterWords.Select(_ => _.Name).ToListAsync();
